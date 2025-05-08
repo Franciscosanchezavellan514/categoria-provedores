@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Crear Proveedor</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>create proveedor</title>
     <link rel="stylesheet" href="../admin.css" />
 </head>
 <body>
@@ -15,23 +16,21 @@
             </div>
         </div>
         <div class="admin-main-container">
-            <form onsubmit="onCreateProveedor(event)">
-                <label for="empresa">Nombre Empresa</label>
-                <input type="text" name="empresa" id="empresa" placeholder="Nombre de la empresa" />
-
-                <label for="direccion">Dirección</label>
-                <input type="text" name="direccion" id="direccion" placeholder="Dirección del proveedor" />
-
-                <label for="telefono">Teléfono</label>
-                <input type="text" name="telefono" id="telefono" placeholder="Teléfono" />
-
-                <label for="email">Correo Electrónico</label>
-                <input type="email" name="email" id="email" placeholder="Correo electrónico" />
-
-                <button type="submit">Crear Proveedor</button>
+            <form onsubmit="onCreateProvider(event)">
+                <label for="name">Nombre</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Ingrese el nombre del proveedor"
+                />
+                <button type="submit">
+                    Crear Proveedor
+                </button>
             </form>
         </div>
     </div>
-    <script src="./create_proveedor.js"></script>
+    <script src="../admin.js"></script>
+    <script src="./create.js"></script>
 </body>
 </html>

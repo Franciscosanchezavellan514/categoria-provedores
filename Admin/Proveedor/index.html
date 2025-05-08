@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Proveedores</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Proveedor</title>
     <link rel="stylesheet" href="../../Index.css" />
     <link rel="stylesheet" href="../admin.css" />
     <link rel="stylesheet" href="../table.css" />
+    <link rel="stylesheet" href="../../utils.css" />
 </head>
 <body>
     <header class="topbar">
-        <div class="logo"><h1>Librería El Estudiante</h1></div>
+        <div class="logo">
+            <h1>Librería El Estudiante</h1>
+        </div>
         <div class="usuario">
             <span id="usuarioNombre">Usuario: </span>
             <button id="cerrarSesion" type="button">Cerrar Sesión</button>
@@ -19,10 +23,10 @@
     <aside class="sidebar">
         <nav>
             <ul>
-                <li><a href="../Factura.html">📄 Facturación</a></li>
-                <li><a href="../Ventas.html">🛒 Ventas</a></li>
-                <li><a href="../compras.html">📦 Compras</a></li>
-                <li><a href="../Inventario.html">📊 Inventario</a></li>
+                <li><a href="./Factura.html">📄 Facturación</a></li>
+                <li><a href="./Ventas.html">🛒 Ventas</a></li>
+                <li><a href="./compras.html">📦 Compras</a></li>
+                <li><a href="./Inventario.html">📊 Movimiento de Inventario</a></li>
             </ul>
         </nav>
         <li class="submenu">
@@ -30,41 +34,25 @@
             <ul class="submenu-lista">
                 <li><a href="../Producto/index.html">📚 Productos</a></li>
                 <li><a href="../Cliente/index.html">👥 Clientes</a></li>
-                <li><a href="../Proveedor/index.html">🏭 Proveedores</a></li>
+                <li><a href="./index.html">🏭 Proveedores</a></li>
+                <li><a href="../Categoria/index.html">🏷️ Categorías</a></li>
             </ul>
-        </li>
+        </li>     
     </aside>
 
     <main class="contenido-principal">
         <h2>🏭 Lista de Proveedores</h2>
-        <button onclick="redirectToCreateProveedor(event)">Agregar Proveedor</button>
-        <div id="tbl-container-Proveedores" class="table-container shadow-md"></div>
+        <button type="button" onclick="redirectToCreateProvider(event)">
+            Ingrese el Proveedor
+        </button>
+        <div id="tbl-container-Providers" class="table-container shadow-md">
+        </div>
     </main>
-
-    <!-- Formulario para editar proveedores (se agregará dinámicamente si se selecciona un proveedor para editar) -->
-    <div id="editFormContainer" style="display:none;">
-        <h3>Editar Proveedor</h3>
-        <form id="editProveedorForm" onsubmit="onCreateOrUpdateProveedor(event)">
-            <input type="hidden" id="proveedorId" />
-            <label for="empresa">Nombre Empresa:</label>
-            <input type="text" id="empresa" name="empresa" required />
-            <br />
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" name="direccion" required />
-            <br />
-            <label for="telefono">Teléfono:</label>
-            <input type="text" id="telefono" name="telefono" required />
-            <br />
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-            <br />
-            <button type="submit" id="submitButton">Actualizar Proveedor</button>
-        </form>
-        <button onclick="cancelEdit()">Cancelar</button>
-    </div>
 
     <script src="../../auth.js"></script>
     <script src="../table.js"></script>
-    <script src="./proveedor.js"></script>
+    <script src="../admin.js"></script>
+    <script src="./create.js"></script>
+    <script src="./proveedores.js"></script>
 </body>
 </html>
