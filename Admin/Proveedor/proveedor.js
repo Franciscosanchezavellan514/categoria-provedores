@@ -5,13 +5,15 @@ function redirectToCreateProvider(e) {
 }
 
 function editProvider(row) {
-	console.log("Editando proveedor", row);
+	console.log("Editando el Proveedor", row);
+	// Aquí iría la lógica de redirección a editar si luego lo agregas.
 }
 
 async function deleteProvider(row) {
 	const providerId = row.idProveedor;
 	const url = `http://localhost:5005/api/Proveedor/${providerId}`;
 	const token = localStorage.getItem("authToken");
+
 	const response = await fetch(url, {
 		method: "DELETE",
 		headers: {
@@ -67,7 +69,6 @@ async function generateProviderTable() {
 		},
 	});
 	const rows = await response.json();
-
 	createDataTable("tbl-container-Providers", columns, rows);
 };
 

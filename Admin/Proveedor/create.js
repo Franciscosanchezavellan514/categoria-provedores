@@ -24,6 +24,6 @@ async function onCreateProvider(event) {
 		return;
 	}
 
-	const redirectUrl = `${window.location.origin}/Admin/Proveedor/create.html`;
+	const redirectUrl = `${window.location.origin}/Admin/Proveedor/index.html`;
 	window.location.href = redirectUrl;
 }
