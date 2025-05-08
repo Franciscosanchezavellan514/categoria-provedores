@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Crear Categoría</title>
+	<link rel="stylesheet" href="../admin.css" />
+</head>
+<body>
+	<div class="admin-container">
+		<div class="admin-header">Header</div>
+		<div class="admin-sidebar">
+			<ul id="admin-sidebar-menu"></ul>
+			<div class="logout-container">
+				<button type="button">Cerrar Sesión</button>
+			</div>
+		</div>
+		<div class="admin-main-container">
+			<form onsubmit="onCreateCategory(event)">
+				<label for="name">Nombre de la Categoría</label>
+				<input type="text" id="name" name="name" placeholder="Ej: Papelería" required />
+				<button type="submit">Crear Categoría</button>
+			</form>
+		</div>
+	</div>
+	<script src="../../auth.js"></script>
+	<script src="../admin.js"></script>
+	<script src="./create.js"></script>
+</body>
+</html>
