@@ -1,15 +1,16 @@
 async function onCreateCategory(event) {
 	event.preventDefault();
-	const name = document.querySelector("#name").value;
+	const form = event.target;
+	const formData = new FormData(form);
+	const category = Object.fromEntries(formData.entries());
 
 	const body = {
-		nombreCategoria: name,
-		activo: true,
-		fechaRegistro: new Date()
+		nombre: category.name
 	};
 
+	const url = "http://localhost:5005/api/Categoria";
 	const token = localStorage.getItem("authToken");
-	const response = await fetch("http://localhost:5005/api/Categoria", {
+	const response = await fetch(url, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -18,10 +19,11 @@ async function onCreateCategory(event) {
 		body: JSON.stringify(body),
 	});
 
-	if (!response.ok) {
+	if (response.status !== 200) {
 		alert("Error al crear la categoría");
 		return;
 	}
 
-	window.location.href = `${window.location.origin}/Admin/Categoria/index.html`;
+	const redirectUrl = `${window.location.origin}/Admin/Categoria/create.html`;
+	window.location.href = redirectUrl;
 }
